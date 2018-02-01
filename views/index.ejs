@@ -1,0 +1,34 @@
+<% include ../views/partials/header %>
+  <div class="container">
+    <div class="row justify-content-md-center">
+            <div class="col-md-6 ">
+                <h3>What's to be done</h3>
+                <form method="post" action="/sorted/add">
+                    <div class="input-group well well-sm ">
+                        <input class="form-control" type="text" name="text" placeholder="Write.."> 
+                    
+                        <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-hand-left"></span> Add Here
+                        </button>
+                    </div>
+                </form>
+            </div>       
+           
+    
+            <div class="col-md-9">
+                <ul class="list-group">
+                    <% makesurecollection.forEach(function(sorted){ %>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"><%= sorted.text %>
+                        
+                        <span class="btn-group">
+                        <a href="/sorted/edit/<%= sorted._id %>" class="btn btn-info pull-right"><span class="glyphicon glyphicon-pencil"></span> Make changes</a>
+                    
+                        <a data-id="<%= sorted._id %>" href="#" class="delete-sorted btn btn-danger pull-right"><span class="glyphicon glyphicon-scissors"></span> Remove</a>
+                        </span>
+                    </li>
+                    <% }) %>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<% include ../views/partials/footer %>

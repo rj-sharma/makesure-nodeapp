@@ -1,0 +1,21 @@
+<% include ../views/partials/header %>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-8">
+                <h3>Edit your work here <span class="glyphicon glyphicon-hand-down"></span></h3>
+                
+                    <form method="post" action="/sorted/edit/<%= sorted._id %>">
+                        <div class="form-group input-group well well-sm ">
+                         <input class="form-control" type="text" name="text" placeholder="Add.." value="<%= sorted.text %>">
+                        </div>
+                         <hr width="100%" noshade>
+                        <span class="btn-group">
+                        <button class="btn btn-primary pull-right" type="submit"><span class="glyphicon glyphicon-ok"> Done</span></button>
+                        <a class="btn btn-danger pull-right" href="/"><span class="glyphicon glyphicon-ban-circle"> Cancel</span></a>
+                        </span> 
+                     </form>
+                
+             </div>
+        </div>
+    </div>
+<% include ../views/partials/footer %>
