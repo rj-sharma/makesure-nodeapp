@@ -9,8 +9,9 @@ const app = express();
 
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
-const url = 'mongodb://localhost:27017/makesure';
-
+const url = 'mongodb://localhost:27017/makesure';  // developer
+//const url = 'mongodb://admin:admin@ds121118.mlab.com:21118/makesure-db';  // production
+ 
 // Body Parser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
